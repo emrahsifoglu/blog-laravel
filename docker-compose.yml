@@ -11,7 +11,7 @@ services:
       SERVICE_TAGS: dev
     tty: true
     ports:
-      - 80:80
+      - 8000:80
     working_dir: /var/www/app
     volumes:
       - ./:/var/www/app
@@ -57,6 +57,33 @@ services:
       test: ["CMD", "redis-cli", "ping"]
       retries: 3
       timeout: 5s
+  composer:
+    build:
+      context: .
+      dockerfile: ./docker/php/composer/Dockerfile
+    volumes:
+      - ./:/var/www/app
+    working_dir: /var/www/app
+    networks:
+      - blog-network
+  artisan:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    volumes:
+      - ./:/var/www/app
+    working_dir: /var/www/app
+    entrypoint: ['php', '/var/www/app/artisan']
+    networks:
+      - blog-network
+  adminer:
+    image: adminer
+    restart: always
+    container_name: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - blog-network
 networks:
   blog-network:
     driver: bridge

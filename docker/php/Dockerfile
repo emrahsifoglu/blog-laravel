@@ -10,4 +10,6 @@ RUN apt-get update && \
     libpng-dev \
     sqlite3-pcre
 
+RUN docker-php-ext-install pdo pdo_mysql
+
 WORKDIR /var/www/app

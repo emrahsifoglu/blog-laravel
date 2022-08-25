@@ -25,4 +25,18 @@ class UserRepository
 
       return $user->fresh();
     }
+
+    /**
+     * @param string $email
+     * @return User
+     */
+    public function findByEmail(string $email): User
+    {
+      /** @var User $user */
+      $user = User::query()
+        ->where('email', '=', $email)
+        ->firstOrFail();
+
+      return $user;
+    }
 }

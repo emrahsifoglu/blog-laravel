@@ -34,3 +34,7 @@ In the project directory you can run commands below to start and stop all contai
 
 - `docker-compose up -d`
 - `docker-compose stop`
+
+## Resources
+
+- https://laracasts.com/discuss/channels/laravel/sqlstate01000-warning-1265-data-truncated-for-column-priority-at-row-1

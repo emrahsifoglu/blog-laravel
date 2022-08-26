@@ -9,6 +9,9 @@ class PostResource extends JsonResource
     /** @var bool  */
     protected bool $withAuthor = false;
 
+    /** @var bool  */
+    protected bool $withComments = false;
+
     /**
      * withAuthor
      *
@@ -17,6 +20,17 @@ class PostResource extends JsonResource
     public function withAuthor(): self
     {
       $this->withAuthor = true;
+      return $this;
+    }
+
+    /**
+     * withComments
+     *
+     * @return $this
+     */
+    public function withComments(): self
+    {
+      $this->withComments = true;
       return $this;
     }
 
@@ -38,6 +52,10 @@ class PostResource extends JsonResource
 
       if ($this->withAuthor) {
         $data['author'] = new UserResource($this->author);
+      }
+
+      if ($this->withComments) {
+        $data['comments'] = CommentResource::collection($this->comments);
       }
 
       return $data;

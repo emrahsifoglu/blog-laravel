@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\Comment\CommentController;
 use App\Http\Controllers\Api\Post\PostController;
 use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Http\Request;
@@ -25,3 +26,4 @@ Route::post('/register', [UserController::class, 'create']);
 Route::post('/login', [AuthController::class, 'authenticate']);
 
 Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
+Route::apiResource('posts/{postId}/comments', CommentController::class)->middleware('auth:sanctum');

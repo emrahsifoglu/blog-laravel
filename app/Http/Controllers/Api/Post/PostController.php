@@ -45,7 +45,7 @@ class PostController extends Controller
 
         $post = $this->repository->store($request->all(), $userId);
 
-        return response()->json((new PostResource($post))->withAuthor(),Response::HTTP_CREATED);
+        return response()->json((new PostResource($post))->withAuthor()->withComments(), Response::HTTP_CREATED);
     }
 
     /**
@@ -56,6 +56,6 @@ class PostController extends Controller
     {
       $post = $this->repository->findById($id);
 
-      return response()->json((new PostResource($post))->withAuthor(),Response::HTTP_OK);
+      return response()->json((new PostResource($post))->withAuthor()->withComments(), Response::HTTP_OK);
     }
 }

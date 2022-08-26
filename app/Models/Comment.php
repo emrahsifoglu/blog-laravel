@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property-read User $author
- * @property-read Comment[] $comments
+ * @property-read User $commenter
+ * @property-read Post $post
  */
-class Post extends Model
+class Comment extends Model
 {
     use HasFactory;
 
@@ -36,9 +35,9 @@ class Post extends Model
      */
     protected $fillable = [
       'id',
-      'title',
-      'description',
-      'author_id',
+      'text',
+      'post_id',
+      'commenter_id'
     ];
 
     /**
@@ -47,26 +46,27 @@ class Post extends Model
      * @var array<string, string>
      */
     protected $casts = [
-      'author_id' => 'string'
+      'post_id' => 'string',
+      'commenter_id' => 'string'
     ];
+
+    /**
+     * post
+     *
+     * @return BelongsTo
+     */
+    public function post(): BelongsTo
+    {
+      return $this->belongsTo(Post::class, 'post_id');
+    }
 
     /**
      * author
      *
      * @return BelongsTo
      */
-    public function author(): BelongsTo
+    public function commenter(): BelongsTo
     {
-      return $this->belongsTo(User::class, 'author_id');
-    }
-
-    /**
-     * comments
-     *
-     * @return HasMany
-     */
-    public function comments(): HasMany
-    {
-      return $this->hasMany(Comment::class, 'post_id', 'id');
+      return $this->belongsTo(User::class, 'commenter_id');
     }
 }

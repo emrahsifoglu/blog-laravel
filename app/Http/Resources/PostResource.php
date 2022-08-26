@@ -6,6 +6,20 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
 {
+    /** @var bool  */
+    protected bool $withAuthor = false;
+
+    /**
+     * withAuthor
+     *
+     * @return $this
+     */
+    public function withAuthor(): self
+    {
+      $this->withAuthor = true;
+      return $this;
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -14,6 +28,18 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+      $data = [
+        'id' => $this->id,
+        'title' => $this->title,
+        'description' => $this->description,
+        'createdAt' => $this->created_at,
+        'updatedAt' => $this->updated_at
+      ];
+
+      if ($this->withAuthor) {
+        $data['author'] = new UserResource($this->author);
+      }
+
+      return $data;
     }
 }

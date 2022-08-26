@@ -5,10 +5,9 @@ namespace App\Http\Controllers\Api\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\PostStoreRequest;
 use App\Http\Resources\PostResource;
-use App\Models\Post;
-use App\Models\User;
 use App\Repositories\PostRepository;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
 class PostController extends Controller
@@ -24,6 +23,16 @@ class PostController extends Controller
       $this->repository = $repository;
     }
 
+  /**
+   * @return AnonymousResourceCollection
+   */
+    public function index(): AnonymousResourceCollection
+    {
+      $posts = $this->repository->findAll();
+
+      return PostResource::collection($posts);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -36,7 +45,7 @@ class PostController extends Controller
 
         $post = $this->repository->store($request->all(), $userId);
 
-        return response()->json(new PostResource($post),Response::HTTP_CREATED);
+        return response()->json((new PostResource($post))->withAuthor(),Response::HTTP_CREATED);
     }
 
     /**
@@ -47,6 +56,6 @@ class PostController extends Controller
     {
       $post = $this->repository->findById($id);
 
-      return response()->json(new PostResource($post),Response::HTTP_OK);
+      return response()->json((new PostResource($post))->withAuthor(),Response::HTTP_OK);
     }
 }

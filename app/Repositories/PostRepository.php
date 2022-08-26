@@ -3,10 +3,19 @@
 namespace App\Repositories;
 
 use App\Models\Post;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
 
 class PostRepository
 {
+    /**
+     * @return Collection
+     */
+    public function findAll(): Collection
+    {
+      return Post::all();
+    }
+
     /**
      * @param array $parameters
      * @param string $authorId

@@ -4,7 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property-read User $author
+ */
 class Post extends Model
 {
     use HasFactory;
@@ -43,4 +47,14 @@ class Post extends Model
     protected $casts = [
       'author_id' => 'string'
     ];
+
+    /**
+     * author
+     *
+     * @return BelongsTo
+     */
+    public function author(): BelongsTo
+    {
+      return $this->belongsTo(User::class, 'author_id');
+    }
 }

@@ -38,12 +38,12 @@ class UserController extends Controller
      *              type="object",
      *              required={"name", "surname", "phone", "email", "password", "passwordRepeat"},
      *              example={
-     *                 "name": "johnny",
+     *                 "name": "Johnny",
      *                 "surname": "Depp",
-     *                 "phone": "phone",
-     *                 "email": "j.depp@example.com",
-     *                 "password": "password",
-     *                 "passwordRepeat": "password"
+     *                 "phone": "+17544161369",
+     *                 "email": "deppjoh@example.com",
+     *                 "password": "Aa54yDt2",
+     *                 "passwordRepeat": "Aa54yDt2"
      *              },
      *              @OA\Property(property="name", type="text"),
      *              @OA\Property(property="surname", type="text"),

@@ -23,17 +23,17 @@ class UserFactory extends Factory
           Str::substr($name, 0, 3) .
           Str::substr($surname, 0, 3);
 
-      return [
-          'id' => Str::uuid(),
-          'name' => $name,
-          'surname' => $surname,
-          'nickname' => $nickname,
-          'phone' => fake()->e164PhoneNumber(),
-          'email' => fake()->safeEmail(),
-          'email_verified_at' => now(),
-          'password' => 'password', //$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
-          'remember_token' => Str::random(10),
-        ];
+        return [
+            'id' => Str::uuid(),
+            'name' => $name,
+            'surname' => $surname,
+            'nickname' => $nickname,
+            'phone' => fake()->e164PhoneNumber(),
+            'email' => fake()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => 'Aa54yDt2', //$2y$10$mGqF7Zlu3zKB8l1jn1G/NeudYwg2GG45EfLt0ym2EHMZF.sG8dxha
+            'remember_token' => Str::random(10),
+          ];
     }
 
     /**

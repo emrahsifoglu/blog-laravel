@@ -17,13 +17,23 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $name = fake()->name();
+        $surname = fake()->name();
+        $nickname =
+          Str::substr($name, 0, 3) .
+          Str::substr($surname, 0, 3);
+
         return [
-            'name' => fake()->name(),
+            'id' => Str::uuid(),
+            'name' => $name,
+            'surname' => $surname,
+            'nickname' => $nickname,
+            'phone' => fake()->e164PhoneNumber(),
             'email' => fake()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => 'Aa54yDt2', //$2y$10$mGqF7Zlu3zKB8l1jn1G/NeudYwg2GG45EfLt0ym2EHMZF.sG8dxha
             'remember_token' => Str::random(10),
-        ];
+          ];
     }
 
     /**

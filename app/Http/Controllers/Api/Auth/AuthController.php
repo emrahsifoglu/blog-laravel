@@ -30,8 +30,8 @@ class AuthController extends Controller
      *              type="object",
      *              required={"email", "password"},
      *              example={
-     *                 "email": "name.surname@example.com",
-     *                 "password": "password"
+     *                 "email": "deppjoh@example.com",
+     *                 "password": "Aa54yDt2"
      *              },
      *              @OA\Property(property="email", type="email"),
      *              @OA\Property(property="password", type="password")

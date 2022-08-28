@@ -295,8 +295,8 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "email": "name.surname@example.com",
-                                    "password": "password"
+                                    "email": "deppjoh@example.com",
+                                    "password": "Aa54yDt2"
                                 }
                             }
                         }
@@ -648,12 +648,12 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "name": "johnny",
+                                    "name": "Johnny",
                                     "surname": "Depp",
                                     "phone": "phone",
-                                    "email": "j.depp@example.com",
-                                    "password": "password",
-                                    "passwordRepeat": "password"
+                                    "email": "deppjoh@example.com",
+                                    "password": "Aa54yDt2",
+                                    "passwordRepeat": "Aa54yDt2"
                                 }
                             }
                         }

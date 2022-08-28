@@ -45,4 +45,40 @@ class PostRepository
 
       return $post;
     }
+
+    /**
+     * @param string $id
+     * @return Post
+     */
+    public function findDeletedById(string $id): Post
+    {
+      /** @var Post $post */
+      $post = Post::withTrashed()->newQuery()
+        ->where('id', '=', $id)
+        ->firstOrFail();
+
+      return $post;
+    }
+
+    /**
+     * @param string $id
+     * @return mixed
+     */
+    public function delete(string $id): mixed
+    {
+      /** @var Post $address */
+      return Post::query()
+        ->where('id', '=', $id)
+        ->firstOrFail()
+        ->delete();
+    }
+
+    /**
+     * @param string $id
+     * @return bool|null
+     */
+    public function restore(string $id): ?bool
+    {
+      return $this->findDeletedById($id)->restore();
+    }
 }

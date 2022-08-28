@@ -52,7 +52,7 @@ class PostController extends Controller
      * @param string $id
      * @return JsonResponse
      */
-    public function show(string $id)
+    public function show(string $id): JsonResponse
     {
       $post = $this->repository->findById($id);
 

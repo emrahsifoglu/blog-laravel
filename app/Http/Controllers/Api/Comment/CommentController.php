@@ -55,7 +55,7 @@ class CommentController extends Controller
      */
     public function show(string $postId, string $id): JsonResponse
     {
-      $comment = $this->repository->findById($id);
+      $comment = $this->repository->findById($postId, $id);
 
       return response()->json((new CommentResource($comment))->withCommenter(), Response::HTTP_OK);
     }

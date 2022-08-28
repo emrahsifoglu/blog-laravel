@@ -41,3 +41,4 @@ In the project directory you can run commands below to start and stop all contai
 - https://community.postman.com/t/extract-value-from-a-json-response-body-via-the-test-scripts/11835/2
 - https://readerstacks.com/how-to-change-data-type-of-column-in-laravel-9-migration/
 - https://github.com/laravel/sanctum/issues/284
+- https://www.thisprogrammingthing.com/2020/Working-With-Laravels-SoftDelete-Trait/

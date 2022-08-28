@@ -23,9 +23,19 @@ class PostController extends Controller
       $this->repository = $repository;
     }
 
-  /**
-   * @return AnonymousResourceCollection
-   */
+    /**
+     * @OA\Get (
+     *     tags={"Posts"},
+     *     path="/api/posts",
+     *     operationId="GetAllPosts",
+     *     tags={"Posts"},
+     *     summary="Get All Posts",
+     *     description="Get All Posts",
+     *     security={{"bearerAuth":{ }}},
+     *     @OA\Response(response="200", description="Index", @OA\JsonContent())
+     * )
+     * @return AnonymousResourceCollection
+     */
     public function index(): AnonymousResourceCollection
     {
       $posts = $this->repository->findAll();
@@ -34,8 +44,33 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
+     * @OA\Post(
+     *     tags={"Posts"},
+     *     path="/api/posts",
+     *     operationId="CreatePost",
+     *     summary="Create Post",
+     *     description="Create Post here",
+     *     security={{"bearerAuth":{ }}},
+     *     @OA\RequestBody(
+     *        description="create a post",
+     *        required=true,
+     *        @OA\MediaType(
+     *           mediaType="application/json",
+     *           @OA\Schema(
+     *              type="object",
+     *              required={"title", "description"},
+     *              example={
+     *                 "title": "example title",
+     *                 "description": "example description"
+     *              },
+     *              @OA\Property(property="title", type="text"),
+     *              @OA\Property(property="description", type="text"),
+     *           ),
+     *        ),
+     *     ),
+     *     @OA\Response(response="201", description="Registered", @OA\JsonContent()),
+     *     @OA\Response(response="422", description="Unprocessable Entity", @OA\JsonContent()),
+     * )
      * @param PostStoreRequest $request
      * @return JsonResponse
      */
@@ -49,6 +84,26 @@ class PostController extends Controller
     }
 
     /**
+     * @OA\Get (
+     *     tags={"Posts"},
+     *     path="/api/posts/{postId}",
+     *     operationId="GetPost",
+     *     summary="Get Post",
+     *     description="Get Post",
+     *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
+     *     @OA\Response(response="200", description="Show", @OA\JsonContent())
+     * )
      * @param string $id
      * @return JsonResponse
      */

@@ -42,3 +42,4 @@ In the project directory you can run commands below to start and stop all contai
 - https://readerstacks.com/how-to-change-data-type-of-column-in-laravel-9-migration/
 - https://github.com/laravel/sanctum/issues/284
 - https://www.thisprogrammingthing.com/2020/Working-With-Laravels-SoftDelete-Trait/
+- https://www.faqcode4u.com/faq/224651/use-jwt-bearer-token-in-swagger-laravel

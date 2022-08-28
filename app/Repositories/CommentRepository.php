@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Comment;
+use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
@@ -86,6 +88,17 @@ class CommentRepository
         ->where('post_id', '=', $postId)
         ->where('id', '=', $id)
         ->firstOrFail()
+        ->delete();
+    }
+
+    /**
+     * @param int $hours
+     * @return mixed
+     */
+    public function deleteAllOutDated(int $hours = 3): mixed
+    {
+      return Comment::query()
+        ->where('created_at', '<=', Carbon::now()->subHours($hours))
         ->delete();
     }
 

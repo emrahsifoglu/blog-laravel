@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\AdminCommentController;
 use App\Http\Controllers\Api\Admin\AdminPostController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Comment\CommentController;
@@ -38,5 +39,17 @@ Route::delete('/admin/posts/{postId}', [AdminPostController::class, 'delete'])
   ->middleware('auth.admin');
 
 Route::post('/admin/posts/{postId}/restore', [AdminPostController::class, 'restore'])
+  ->middleware('auth:sanctum')
+  ->middleware('auth.admin');
+
+Route::get('/admin/posts/{postId}/comments/{commentId}', [AdminCommentController::class, 'show'])
+  ->middleware('auth:sanctum')
+  ->middleware('auth.admin');
+
+Route::delete('/admin/posts/{postId}/comments/{commentId}', [AdminCommentController::class, 'delete'])
+  ->middleware('auth:sanctum')
+  ->middleware('auth.admin');
+
+Route::post('/admin/posts/{postId}/comments/{commentId}/restore', [AdminCommentController::class, 'restore'])
   ->middleware('auth:sanctum')
   ->middleware('auth.admin');

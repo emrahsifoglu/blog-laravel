@@ -23,6 +23,41 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Post(
+     *     tags={"Users"},
+     *     path="/api/register",
+     *     operationId="Register",
+     *     tags={"Register"},
+     *     summary="User Register",
+     *     description="User Register here",
+     *     @OA\RequestBody(
+     *        description="register a user",
+     *        required=true,
+     *        @OA\MediaType(
+     *           mediaType="application/json",
+     *           @OA\Schema(
+     *              type="object",
+     *              required={"name", "surname", "phone", "email", "password", "passwordRepeat"},
+     *              example={
+     *                 "name": "johnny",
+     *                 "surname": "Depp",
+     *                 "phone": "phone",
+     *                 "email": "j.depp@example.com",
+     *                 "password": "password",
+     *                 "passwordRepeat": "password"
+     *              },
+     *              @OA\Property(property="name", type="text"),
+     *              @OA\Property(property="surname", type="text"),
+     *              @OA\Property(property="phone", type="text"),
+     *              @OA\Property(property="email", type="text"),
+     *              @OA\Property(property="password", type="password"),
+     *              @OA\Property(property="passwordRepeat", type="password")
+     *           ),
+     *        ),
+     *     ),
+     *     @OA\Response(response="201", description="Registered", @OA\JsonContent()),
+     *     @OA\Response(response="422", description="Unprocessable Entity", @OA\JsonContent()),
+     * )
      * @param UserRegisterRequest $request
      * @return JsonResponse
      */

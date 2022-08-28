@@ -3,9 +3,6 @@
     "info": {
         "title": "Blog Laravel OpenApi",
         "description": "Blog Laravel Swagger OpenApi",
-        "contact": {
-            "email": "darius@matulionis.lt"
-        },
         "license": {
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
@@ -16,13 +13,13 @@
         "/api/login": {
             "post": {
                 "tags": [
-                    "Login"
+                    "Users"
                 ],
                 "summary": "User Login",
                 "description": "Login User Here",
-                "operationId": "authLogin",
+                "operationId": "Login",
                 "requestBody": {
-                    "description": "login a user",
+                    "description": "auth a user",
                     "required": true,
                     "content": {
                         "application/json": {
@@ -76,10 +73,221 @@
                 }
             }
         },
+        "/api/posts/{postId}/comments": {
+            "get": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get all commemts",
+                "description": "Get all commemts",
+                "operationId": "GetAllComments",
+                "responses": {
+                    "200": {
+                        "description": "Index",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Create Comment",
+                "description": "Create Post Comment",
+                "operationId": "CreateComment",
+                "requestBody": {
+                    "description": "create a comment",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "text"
+                                ],
+                                "properties": {
+                                    "text": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "text": "example comment"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registered",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/posts/{postId}/comments/{commentId}": {
+            "get": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get Comment",
+                "description": "Get Comment",
+                "operationId": "GetComment",
+                "responses": {
+                    "200": {
+                        "description": "Show",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get all posts",
+                "description": "Get all posts",
+                "operationId": "GetAllPosts",
+                "responses": {
+                    "200": {
+                        "description": "Index",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Create Post",
+                "description": "Create Post here",
+                "operationId": "CreatePost",
+                "requestBody": {
+                    "description": "create a post",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "text"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "title": "example title",
+                                    "description": "example description"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registered",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/posts/{postId}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get Post",
+                "description": "Get Post",
+                "operationId": "GetPost",
+                "responses": {
+                    "200": {
+                        "description": "Show",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/register": {
             "post": {
                 "tags": [
-                    "Register"
+                    "Users"
                 ],
                 "summary": "User Register",
                 "description": "User Register here",
@@ -150,20 +358,14 @@
                     }
                 }
             }
-        },
-        "/": {
-            "get": {
-                "description": "Home page",
-                "responses": {
-                    "default": {
-                        "description": "Welcome page"
-                    }
-                }
-            }
         }
     },
     "components": {
         "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            },
             "sanctum": {
                 "type": "apiKey",
                 "description": "Enter token in format (Bearer <token>)",

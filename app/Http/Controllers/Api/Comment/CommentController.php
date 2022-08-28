@@ -24,6 +24,15 @@ class CommentController extends Controller
     }
 
     /**
+     * @OA\Get (
+     *     tags={"Comments"},
+     *     path="/api/posts/{postId}/comments",
+     *     operationId="GetAllComments",
+     *     summary="Get all commemts",
+     *     description="Get all commemts",
+     *     security={{"bearerAuth":{ }}},
+     *     @OA\Response(response="200", description="Index", @OA\JsonContent())
+     * )
      * @param string $postId
      * @return AnonymousResourceCollection
      */
@@ -35,6 +44,31 @@ class CommentController extends Controller
     }
 
     /**
+     * @OA\Post(
+     *     tags={"Comments"},
+     *     path="/api/posts/{postId}/comments",
+     *     operationId="CreateComment",
+     *     summary="Create Comment",
+     *     description="Create Post Comment",
+     *     security={{"bearerAuth":{ }}},
+     *     @OA\RequestBody(
+     *        description="create a comment",
+     *        required=true,
+     *        @OA\MediaType(
+     *           mediaType="application/json",
+     *           @OA\Schema(
+     *              type="object",
+     *              required={"text"},
+     *              example={
+     *                 "text": "example comment"
+     *              },
+     *              @OA\Property(property="text", type="text"),
+     *           ),
+     *        ),
+     *     ),
+     *     @OA\Response(response="201", description="Registered", @OA\JsonContent()),
+     *     @OA\Response(response="422", description="Unprocessable Entity", @OA\JsonContent()),
+     * )
      * @param CommentStoreRequest $request
      * @param string $postId
      * @return JsonResponse
@@ -49,6 +83,15 @@ class CommentController extends Controller
     }
 
     /**
+     * @OA\Get (
+     *     tags={"Comments"},
+     *     path="/api/posts/{postId}/comments/{commentId}",
+     *     operationId="GetComment",
+     *     summary="Get Comment",
+     *     description="Get Comment",
+     *     security={{"bearerAuth":{ }}},
+     *     @OA\Response(response="200", description="Show", @OA\JsonContent())
+     * )
      * @param string $postId
      * @param string $id
      * @return JsonResponse

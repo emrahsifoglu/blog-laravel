@@ -27,7 +27,6 @@ class UserController extends Controller
      *     tags={"Users"},
      *     path="/api/register",
      *     operationId="Register",
-     *     tags={"Register"},
      *     summary="User Register",
      *     description="User Register here",
      *     @OA\RequestBody(

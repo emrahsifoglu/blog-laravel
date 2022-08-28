@@ -18,12 +18,11 @@ class AuthController extends Controller
      * @OA\Post(
      *     tags={"Users"},
      *     path="/api/login",
-     *     operationId="authLogin",
-     *     tags={"Login"},
+     *     operationId="Login",
      *     summary="User Login",
      *     description="Login User Here",
      *     @OA\RequestBody(
-     *        description="login a user",
+     *        description="auth a user",
      *        required=true,
      *        @OA\MediaType(
      *            mediaType="application/json",

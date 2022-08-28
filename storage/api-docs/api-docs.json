@@ -10,6 +10,152 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/admin/posts/{postId}/comments/{commentId}": {
+            "get": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get Comment For Admin",
+                "description": "Get Comment For Admin",
+                "operationId": "GetCommentForAdmin",
+                "responses": {
+                    "200": {
+                        "description": "Show",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Delete Comment By Admin",
+                "description": "Delete Comment By Admin",
+                "operationId": "DeleteCommentByAdmin",
+                "responses": {
+                    "204": {
+                        "description": "Delete",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/posts/{postId}/comments/{commentId}/restore": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Restore Comment By Admin",
+                "description": "Restore Comment By Admin",
+                "operationId": "RestoreCommentByAdmin",
+                "responses": {
+                    "200": {
+                        "description": "Restore",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/posts/{postId}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get Post For Admin",
+                "description": "Get Post For Admin",
+                "operationId": "GetPostForAdmin",
+                "responses": {
+                    "200": {
+                        "description": "Show",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Delete Post By Admin",
+                "description": "Delete Post By Admin",
+                "operationId": "DeletePostByAdmin",
+                "responses": {
+                    "204": {
+                        "description": "Delete",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/admin/posts/{postId}/restore": {
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Restore Post By Admin",
+                "description": "Restore Post By Admin",
+                "operationId": "RestorePostByAdmin",
+                "responses": {
+                    "200": {
+                        "description": "Restore",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/login": {
             "post": {
                 "tags": [

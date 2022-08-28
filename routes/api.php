@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\AdminPostController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Comment\CommentController;
 use App\Http\Controllers\Api\Post\PostController;
@@ -27,3 +28,15 @@ Route::post('/login', [AuthController::class, 'authenticate']);
 
 Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 Route::apiResource('posts/{postId}/comments', CommentController::class)->middleware('auth:sanctum');
+
+Route::get('/admin/posts/{postId}', [AdminPostController::class, 'show'])
+  ->middleware('auth:sanctum')
+  ->middleware('auth.admin');
+
+Route::delete('/admin/posts/{postId}', [AdminPostController::class, 'delete'])
+  ->middleware('auth:sanctum')
+  ->middleware('auth.admin');
+
+Route::post('/admin/posts/{postId}/restore', [AdminPostController::class, 'restore'])
+  ->middleware('auth:sanctum')
+  ->middleware('auth.admin');

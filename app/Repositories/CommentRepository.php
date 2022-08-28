@@ -27,14 +27,18 @@ class CommentRepository
     }
 
     /**
+     * @param string $postId
      * @param string $id
      * @return Comment
      */
-    public function findById(string $id): Comment
+    public function findById(string $postId, string $id): Comment
     {
       /** @var Comment $comment */
       $comment = Comment::query()
-        ->where('id', '=', $id)
+        ->join('posts','posts.id','=','comments.post_id')
+        ->where('comments.post_id', '=', $postId)
+        ->where('comments.id', '=', $id)
+        ->whereNull('posts.deleted_at')
         ->firstOrFail();
 
       return $comment;
@@ -47,7 +51,10 @@ class CommentRepository
     public function findAllBelongToPost(string $postId): Collection
     {
       return Comment::query()
-        ->where('post_id', '=', $postId)
+        ->join('posts','posts.id','=','comments.post_id')
+        ->where('comments.post_id', '=', $postId)
+        ->whereNull('posts.deleted_at')
+        ->select('comments.*')
         ->get();
     }
 }

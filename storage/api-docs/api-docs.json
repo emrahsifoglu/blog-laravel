@@ -18,6 +18,30 @@
                 "summary": "Get Comment For Admin",
                 "description": "Get Comment For Admin",
                 "operationId": "GetCommentForAdmin",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "description": "ID of Comment",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Show",
@@ -41,6 +65,30 @@
                 "summary": "Delete Comment By Admin",
                 "description": "Delete Comment By Admin",
                 "operationId": "DeleteCommentByAdmin",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "description": "ID of Comment",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "204": {
                         "description": "Delete",
@@ -66,6 +114,30 @@
                 "summary": "Restore Comment By Admin",
                 "description": "Restore Comment By Admin",
                 "operationId": "RestoreCommentByAdmin",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "description": "ID of Comment",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Restore",
@@ -91,6 +163,19 @@
                 "summary": "Get Post For Admin",
                 "description": "Get Post For Admin",
                 "operationId": "GetPostForAdmin",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Show",
@@ -114,6 +199,19 @@
                 "summary": "Delete Post By Admin",
                 "description": "Delete Post By Admin",
                 "operationId": "DeletePostByAdmin",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "204": {
                         "description": "Delete",
@@ -139,6 +237,19 @@
                 "summary": "Restore Post By Admin",
                 "description": "Restore Post By Admin",
                 "operationId": "RestorePostByAdmin",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Restore",
@@ -224,9 +335,22 @@
                 "tags": [
                     "Comments"
                 ],
-                "summary": "Get all commemts",
-                "description": "Get all commemts",
+                "summary": "Get All Commemts",
+                "description": "Get All Commemts",
                 "operationId": "GetAllComments",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Index",
@@ -248,8 +372,21 @@
                     "Comments"
                 ],
                 "summary": "Create Comment",
-                "description": "Create Post Comment",
+                "description": "Create Comment",
                 "operationId": "CreateComment",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "requestBody": {
                     "description": "create a comment",
                     "required": true,
@@ -305,6 +442,30 @@
                 "summary": "Get Comment",
                 "description": "Get Comment",
                 "operationId": "GetComment",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "description": "ID of Comment",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Show",
@@ -327,8 +488,8 @@
                 "tags": [
                     "Posts"
                 ],
-                "summary": "Get all posts",
-                "description": "Get all posts",
+                "summary": "Get All Posts",
+                "description": "Get All Posts",
                 "operationId": "GetAllPosts",
                 "responses": {
                     "200": {
@@ -413,6 +574,19 @@
                 "summary": "Get Post",
                 "description": "Get Post",
                 "operationId": "GetPost",
+                "parameters": [
+                    {
+                        "name": "postId",
+                        "in": "path",
+                        "description": "ID of Post",
+                        "required": true,
+                        "schema": {
+                            "type": "strind",
+                            "format": "uuid"
+                        },
+                        "example": "123e4567-e89b-12d3-a456-426614174000"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Show",

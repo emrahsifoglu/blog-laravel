@@ -28,9 +28,20 @@ class CommentController extends Controller
      *     tags={"Comments"},
      *     path="/api/posts/{postId}/comments",
      *     operationId="GetAllComments",
-     *     summary="Get all commemts",
-     *     description="Get all commemts",
+     *     summary="Get All Commemts",
+     *     description="Get All Commemts",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Index", @OA\JsonContent())
      * )
      * @param string $postId
@@ -49,8 +60,19 @@ class CommentController extends Controller
      *     path="/api/posts/{postId}/comments",
      *     operationId="CreateComment",
      *     summary="Create Comment",
-     *     description="Create Post Comment",
+     *     description="Create Comment",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\RequestBody(
      *        description="create a comment",
      *        required=true,
@@ -90,6 +112,28 @@ class CommentController extends Controller
      *     summary="Get Comment",
      *     description="Get Comment",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
+     *     @OA\Parameter(
+     *        description="ID of Comment",
+     *        in="path",
+     *        name="commentId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Show", @OA\JsonContent())
      * )
      * @param string $postId

@@ -30,6 +30,17 @@ class AdminPostController extends Controller
      *     summary="Get Post For Admin",
      *     description="Get Post For Admin",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Show", @OA\JsonContent())
      * )
      * @param string $id
@@ -51,6 +62,17 @@ class AdminPostController extends Controller
      *     summary="Delete Post By Admin",
      *     description="Delete Post By Admin",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="204", description="Delete", @OA\JsonContent())
      * )
      * @param string $id
@@ -72,6 +94,17 @@ class AdminPostController extends Controller
      *     summary="Restore Post By Admin",
      *     description="Restore Post By Admin",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Restore", @OA\JsonContent())
      * )
      * @param string $id

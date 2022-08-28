@@ -29,8 +29,8 @@ class PostController extends Controller
      *     path="/api/posts",
      *     operationId="GetAllPosts",
      *     tags={"Posts"},
-     *     summary="Get all posts",
-     *     description="Get all posts",
+     *     summary="Get All Posts",
+     *     description="Get All Posts",
      *     security={{"bearerAuth":{ }}},
      *     @OA\Response(response="200", description="Index", @OA\JsonContent())
      * )
@@ -91,6 +91,17 @@ class PostController extends Controller
      *     summary="Get Post",
      *     description="Get Post",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Show", @OA\JsonContent())
      * )
      * @param string $id

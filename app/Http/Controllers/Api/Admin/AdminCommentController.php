@@ -30,6 +30,28 @@ class AdminCommentController extends Controller
      *     summary="Get Comment For Admin",
      *     description="Get Comment For Admin",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
+     *     @OA\Parameter(
+     *        description="ID of Comment",
+     *        in="path",
+     *        name="commentId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Show", @OA\JsonContent())
      * )
      * @param string $postId
@@ -52,6 +74,28 @@ class AdminCommentController extends Controller
      *     summary="Delete Comment By Admin",
      *     description="Delete Comment By Admin",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
+     *     @OA\Parameter(
+     *        description="ID of Comment",
+     *        in="path",
+     *        name="commentId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="204", description="Delete", @OA\JsonContent())
      * )
      * @param string $postId
@@ -74,6 +118,28 @@ class AdminCommentController extends Controller
      *     summary="Restore Comment By Admin",
      *     description="Restore Comment By Admin",
      *     security={{"bearerAuth":{ }}},
+     *     @OA\Parameter(
+     *        description="ID of Post",
+     *        in="path",
+     *        name="postId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
+     *     @OA\Parameter(
+     *        description="ID of Comment",
+     *        in="path",
+     *        name="commentId",
+     *        required=true,
+     *        example="123e4567-e89b-12d3-a456-426614174000",
+     *        @OA\Schema(
+     *           type="strind",
+     *           format="uuid"
+     *        )
+     *     ),
      *     @OA\Response(response="200", description="Restore", @OA\JsonContent())
      * )
      * @param string $postId

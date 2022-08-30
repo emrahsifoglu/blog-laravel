@@ -33,8 +33,8 @@ class AuthController extends Controller
      *                 "email": "deppjoh@example.com",
      *                 "password": "Aa54yDt2"
      *              },
-     *              @OA\Property(property="email", type="email"),
-     *              @OA\Property(property="password", type="password")
+     *              @OA\Property(property="email", type="string"),
+     *              @OA\Property(property="password", type="string")
      *           ),
      *        ),
      *     ),

@@ -28,8 +28,8 @@ class CommentController extends Controller
      *     tags={"Comments"},
      *     path="/api/posts/{postId}/comments",
      *     operationId="GetAllComments",
-     *     summary="Get All Commemts",
-     *     description="Get All Commemts",
+     *     summary="Get All Comments",
+     *     description="Get All Comments",
      *     security={{"bearerAuth":{ }}},
      *     @OA\Parameter(
      *        description="ID of Post",
@@ -38,7 +38,7 @@ class CommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -69,7 +69,7 @@ class CommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -84,7 +84,7 @@ class CommentController extends Controller
      *              example={
      *                 "text": "example comment"
      *              },
-     *              @OA\Property(property="text", type="text"),
+     *              @OA\Property(property="text", type="string"),
      *           ),
      *        ),
      *     ),
@@ -119,7 +119,7 @@ class CommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -130,7 +130,7 @@ class CommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),

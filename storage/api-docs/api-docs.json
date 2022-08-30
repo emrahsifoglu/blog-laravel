@@ -7,7 +7,7 @@
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "version": "1.0.0"
+        "version": "3.1.0"
     },
     "paths": {
         "/api/admin/posts/{postId}/comments/{commentId}": {
@@ -25,7 +25,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -36,7 +36,7 @@
                         "description": "ID of Comment",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -72,7 +72,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -83,7 +83,7 @@
                         "description": "ID of Comment",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -121,7 +121,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -132,7 +132,7 @@
                         "description": "ID of Comment",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -170,7 +170,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -206,7 +206,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -244,7 +244,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -287,10 +287,10 @@
                                 ],
                                 "properties": {
                                     "email": {
-                                        "type": "email"
+                                        "type": "string"
                                     },
                                     "password": {
-                                        "type": "password"
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object",
@@ -335,8 +335,8 @@
                 "tags": [
                     "Comments"
                 ],
-                "summary": "Get All Commemts",
-                "description": "Get All Commemts",
+                "summary": "Get All Comments",
+                "description": "Get All Comments",
                 "operationId": "GetAllComments",
                 "parameters": [
                     {
@@ -345,7 +345,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -381,7 +381,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -398,7 +398,7 @@
                                 ],
                                 "properties": {
                                     "text": {
-                                        "type": "text"
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object",
@@ -449,7 +449,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -460,7 +460,7 @@
                         "description": "ID of Comment",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -526,10 +526,10 @@
                                 ],
                                 "properties": {
                                     "title": {
-                                        "type": "text"
+                                        "type": "string"
                                     },
                                     "description": {
-                                        "type": "text"
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object",
@@ -581,7 +581,7 @@
                         "description": "ID of Post",
                         "required": true,
                         "schema": {
-                            "type": "strind",
+                            "type": "string",
                             "format": "uuid"
                         },
                         "example": "123e4567-e89b-12d3-a456-426614174000"
@@ -628,29 +628,29 @@
                                 ],
                                 "properties": {
                                     "name": {
-                                        "type": "text"
+                                        "type": "string"
                                     },
                                     "surname": {
-                                        "type": "text"
+                                        "type": "string"
                                     },
                                     "phone": {
-                                        "type": "text"
+                                        "type": "string"
                                     },
                                     "email": {
-                                        "type": "text"
+                                        "type": "string"
                                     },
                                     "password": {
-                                        "type": "password"
+                                        "type": "string"
                                     },
                                     "passwordRepeat": {
-                                        "type": "password"
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object",
                                 "example": {
                                     "name": "Johnny",
                                     "surname": "Depp",
-                                    "phone": "phone",
+                                    "phone": "+17544161369",
                                     "email": "deppjoh@example.com",
                                     "password": "Aa54yDt2",
                                     "passwordRepeat": "Aa54yDt2"

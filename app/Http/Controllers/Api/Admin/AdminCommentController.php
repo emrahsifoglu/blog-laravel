@@ -37,7 +37,7 @@ class AdminCommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -48,7 +48,7 @@ class AdminCommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -81,7 +81,7 @@ class AdminCommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -92,7 +92,7 @@ class AdminCommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -125,7 +125,7 @@ class AdminCommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
@@ -136,7 +136,7 @@ class AdminCommentController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),

@@ -45,12 +45,12 @@ class UserController extends Controller
      *                 "password": "Aa54yDt2",
      *                 "passwordRepeat": "Aa54yDt2"
      *              },
-     *              @OA\Property(property="name", type="text"),
-     *              @OA\Property(property="surname", type="text"),
-     *              @OA\Property(property="phone", type="text"),
-     *              @OA\Property(property="email", type="text"),
-     *              @OA\Property(property="password", type="password"),
-     *              @OA\Property(property="passwordRepeat", type="password")
+     *              @OA\Property(property="name", type="string"),
+     *              @OA\Property(property="surname", type="string"),
+     *              @OA\Property(property="phone", type="string"),
+     *              @OA\Property(property="email", type="string"),
+     *              @OA\Property(property="password", type="string"),
+     *              @OA\Property(property="passwordRepeat", type="string")
      *           ),
      *        ),
      *     ),

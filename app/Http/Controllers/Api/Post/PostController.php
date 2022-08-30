@@ -63,8 +63,8 @@ class PostController extends Controller
      *                 "title": "example title",
      *                 "description": "example description"
      *              },
-     *              @OA\Property(property="title", type="text"),
-     *              @OA\Property(property="description", type="text"),
+     *              @OA\Property(property="title", type="string"),
+     *              @OA\Property(property="description", type="string"),
      *           ),
      *        ),
      *     ),
@@ -98,7 +98,7 @@ class PostController extends Controller
      *        required=true,
      *        example="123e4567-e89b-12d3-a456-426614174000",
      *        @OA\Schema(
-     *           type="strind",
+     *           type="string",
      *           format="uuid"
      *        )
      *     ),
